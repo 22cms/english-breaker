@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Francesco's Broken English Maker</title>
+		<link rel="icon" href="favicon.png">
+		<link href="css/material.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/single.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+	
+	<body class="grey darken-4">
+	<div class="logo"><img src="logo.svg" class="logoimg"></img></div>
+	<div class="contvl">
+		<div name="card" class="card-panel grey darken-3 no-padding">
+			<div id="translateSection">
+				<div class="conthmobile valign-wrapper">
+					<div name="originaltext" class="contv2 add-padding">
+						<div class="conth hspacemobile valign-wrapper">
+							<h5 class="white-text" style="margin-top: 9px">Intact English</h5>
+							<img src="imgs/minilogo.svg" width="40px" height="auto"></img>
+						</div>
+						<div class="input-field col s10">
+							<textarea id="text" class="materialize-textarea translate white-text">Type a text here</textarea>
+							<div class="spacerh"></div>
+							<div class="conthmobile noconthspace">
+								<button id="pasteButton" onCLick="navigator.clipboard.readText().then(text => document.getElementById('text').value = text);" type="button" class="btn-flat waves-effect waves-orange orange-text button-border" style="width:auto;"><i class="large material-icons left">content_paste</i><ch>PASTE</ch></button>
+								<div style="width: 16px; height: 12px;"></div>
+								<button id="customButton" onCLick="ModeSwitch()" type="button" class="btn-flat waves-effect waves-teal teal-text button-border" style="width:auto;"><i class="large material-icons left">add</i><ch>CUSTOM RULES</ch></button>
+								<div style="width: 16px; height: 12px"></div>
+								<button id="quoteButton" onCLick="QuoteOfDay()" type="button" class="btn-flat waves-effect waves-purple purple-text button-border" style="width:auto;"><i class="large material-icons left">format_quote</i><ch>QUOTE</ch></button>
+								<div style="width: 1px"></div>
+								<button id="clearText" type="button" onClick="clearText()" class="btn-flat waes-effect waves-red lighten-5 grey-text" style="width:15px;"><i class="large material-icons left">clear</i></button>
+							</div>
+						</div>
+					</div>
+					<div name="modficifrdedtext" class="contv2 grey darken-3 add-padding">
+						<div class="conth hspacemobile valign-wrapper">
+							<h5 class="white-text" style="margin-top: 9px">bronke english</h5>
+							<img src="imgs/minilogo1.svg" width="40px" height="auto"></img>
+						</div>
+						<div class="input-field col s10">
+							<textarea id="tetx" class="materialize-textarea translate white-text">typ an tetx here</textarea>
+							<div class="spacerh"></div>
+							<div class="conthmobile noconthspace">
+								<button id="copyButton" onclick="copyTetx()" type="button" class="btn-flat waves-effect waves-pink pink-text button-border" style="width:auto;"><i class="large material-icons left">content_copy</i><ch>COPY</ch></button>
+								<div style="width: 16px; height: 12px;"></div>
+								<button id="translateButton" onclick="transTetx()" type="button" class="btn-flat waves-effect waves-indigo blue-text button-border" style="width:auto;"><i class="large material-icons left">translate</i><ch>TRANSLATE</ch></button>
+								<div style="width: 16px; height: 12px;"></div>
+								<button id="googleButton" onclick="tryOnGoogle()" type="button" class="btn-flat waves-effect waves-green green-text button-border" style="width:auto;"><i class="large material-icons left">g_translate</i><ch>TRY ON GOOGLE</ch></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="rulesSection" style="display: none">
+				<div class="conthmobile valign-wrapper align-top">
+					<div name="newRulesDiv" class="contv2 add-padding">
+						<div class="conth hspacemobile valign-wrapper">
+							<h5 class="white-text" style="margin-top: 9px">Add a new Custom Rule</h5>
+							<img src="imgs/custom.svg" width="40px" height="auto"></img>
+						</div>
+						<p class="white-text">A custom rule is a custom translation for a choosen word. When a custom rule is added, it will saved to browser's storage and it will be applied to every translation. A custom rule can overwrite an already existing rule in the default dictionary</p>
+						<div class="conthmobile noconthspace">
+							<div style="display: flex; flex-direction: column;"><input value="lmfao" id="origWord" type="text" class="white-text" style="width: 150px;"><label class="active" for="origWord">Original Word</label></div>
+							<div class="spacerw" style="height: 10px"></div>
+							<div style="display: flex; flex-direction: column;"><input value="lmsao" id="transWord" type="text" class="white-text" style="width: 150px;"><label class="active" for="transWord">Translation</label></div>
+							<div class="spacerw" style="height: 10px"></div>
+							<button id="addButton" onClick="addRule(document.getElementById('origWord').value, document.getElementById('transWord').value); updateTable()" type="button" class="btn-flat waves-effect waves-red red-text button-border" style="width:auto;"><i class="large material-icons left">add</i><ch>ADD</ch></button>
+						</div>
+					</div>
+					<div name="oldRulesDiv" class="contv2 add-padding">
+						<div class="conth hspacemobile valign-wrapper">
+							<h5 class="white-text" style="margin-top: 9px">Custom Rules</h5>
+							<img src="imgs/custom1.svg" width="40px" height="auto"></img>
+						</div>
+						<p class="white-text">There are all of the custom rules that were saved in browser's storage. Click one of them to delete it</p>
+						<button id="backButton" onClick="ModeSwitch()" type="button" class="btn-flat waves-effect waves-green green-text button-border" style="width:110px;"><i class="large material-icons left">arrow_back</i><ch>BACK</ch></button>
+						<br>
+						<div id="customRuleList"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="center-align" style="width: 100%; color: #616161; font-size: 10px;">Advertisment: Someone pls give me a tip on what keyboard to use on <a href="http://t.me/francasDM" class="grey-text">Telegram</a></p>
+		<p class="center-align" style="width: 100%; color: #616161; font-size: 10px; margin-top: 3px">As Always, huge thanks to <a href="http://t.me/Marekkon5" class="grey-text">Marekkon5</a> for general helping etc etc <3</p>
+	</div>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/vocabulary.js"></script>
+	<script type="text/javascript" src="js/single.js"></script>
+	</body>

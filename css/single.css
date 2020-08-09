@@ -1,0 +1,230 @@
+.logo{
+	display: flex;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	margin-top: 25px;
+	margin-bottom: 12px;
+}
+.logoimg {
+	width: 395px;
+	height: auto;
+}
+.trackinfomobile {
+	display: none;
+}
+.conth, .conthmobile {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.contv, .contv2, .contvl {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.contv {
+	min-height: 200px;
+	height: auto;
+	width: 460px;
+}
+.contv2 {
+	min-height: 200px;
+	height: auto;
+	width: 499px;
+}
+.contvl {
+	justify-content: center;
+	width: 1000px;
+	margin: auto;
+	flex-grow: 1;
+}
+.nocontcenter {
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.card-panel {
+	justify-content: center;
+}
+.roundedimg {
+	border-radius: 50%;
+}
+.albumart {
+	width: 300px;
+	height: 300px;
+}
+.roundedcorner {
+	border-radius: 5%;
+}
+.vertical-center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.spacer {
+    height: 10px;
+    width: 100%;
+}
+.button-border {
+    border: 2px solid !important;
+	border-top-color: rgb(0, 204, 204);
+}
+.noconthspace {
+	justify-content: flex-start !important;
+	align-items: center;
+}
+.glow {
+	color: white;
+}
+.glow:hover, .delglow {
+	color: #909090;
+}
+.delglow:hover{
+	color: red;
+}
+.thumb {
+	display: none;
+}
+.noborder {
+	border: 0px !important;
+}
+
+.controls {
+	justify-content: center !important;
+}
+
+.t10px {
+	width: 10px;
+}
+#spacerw, .spacerw {
+	width: 20px;
+}
+.albumartimg {
+	width: 300px;
+	height: 300px;
+}
+#openapp {
+	display: none;
+}
+.rgbmargin {
+	margin-bottom: 20px;
+}
+#rgbpalette {
+	display: inline;
+}
+#rgbpalettelegacy {
+	display: none;
+}
+.spacerh {
+	height: 10px;
+}
+.translate {
+	min-height: 150px !important;
+}
+.nopadding {
+	padding: 0;
+}
+.add-padding {
+	padding: 18px;
+}
+.align-top {
+	display: flex !important;
+	align-items: flex-start !important;
+}
+.minilogo:hover {
+	stroke: #f3c700;
+	fill: #f3c700;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen
+and (max-device-width:900px)
+{.contvl {
+	width: 100%;
+}
+}
+
+@media only screen 
+and (max-device-width: 600px)
+{.logo {
+	height: auto;
+	margin-top: 22px;
+	margin-bottom: 10px;
+}
+.logoimg {
+	width: 250px;
+	height: auto;
+}
+.contvl {
+	width: 100%;
+}
+.conth {
+	width: 100%;
+	justify-content: center;
+}
+.albumart {
+	width: auto;
+	height: auto;
+	position: relative !important;
+}
+.trackinfomobile {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	position: absolute;
+	top: 0;
+	background-image: url("../imgs/gradient.png");
+	width: 300px;
+	height: 300px;
+	padding: 16px;
+}
+.t10px {
+	width: 30px;
+}
+.glowmobile {
+	color: white !important;
+}
+.glowmobile:hover {
+	color: #909090 !important;
+}
+.spacer {
+	height: 25px;
+}
+.hideonmobile {
+	display: none;
+}
+.conthmobile {
+	flex-direction: column;
+}
+#openapp {
+	display: inline;
+
+}
+#rgbpalette {
+	display: none;
+}
+#rgbpalettelegacy {
+	display: inline;
+}
+.contv2 {
+	min-height: 200px;
+	height: auto;
+	width: 300px;
+}
+.hspacemobile {
+	justify-content: space-between;
+}
+.spacer
+}
