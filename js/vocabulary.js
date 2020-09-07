@@ -3,6 +3,7 @@
 let dictionary = {
 	'sex': 'seks',
     'sec': 'sex',
+	'seks': 'secs',
     'minecraft': 'minchiaft',
 	'lmso': 'lmsi',
     'lmao': 'lmso',
@@ -38,4 +39,5 @@ let dictionary = {
 	'cc': ['cc', 'xx'],
 	'bad': 'bed',
 	'what': 'wot',
+	'funny': ['funi', 'funni']
 };
